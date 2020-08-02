@@ -35,7 +35,7 @@ generator = cms.EDFilter("Pythia8GeneratorFilter",
 
 generator.PythiaParameters.processParameters.extend(EvtGenExtraParticles)
 
-partonfilter = cms.EDFilter("PythiaFi5lter",
+partonfilter = cms.EDFilter("PythiaFilter",
     ParticleID = cms.untracked.int32(5) # 4 for c and 5 for b quark
 	)
 
