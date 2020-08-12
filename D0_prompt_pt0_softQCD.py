@@ -22,7 +22,7 @@ generator = cms.EDFilter("Pythia8GeneratorFilter",
         pythia8CommonSettingsBlock,
         pythia8CP5SettingsBlock,
         processParameters = cms.vstring(
-            'SoftQCD:all = on',
+            'HardQCD:all = on',
             'PhaseSpace:pTHatMin = 0.', #min pthat
         ),
         parameterSets = cms.vstring(
@@ -42,8 +42,8 @@ partonfilter = cms.EDFilter("PythiaFilter",
 D0Daufilter = cms.EDFilter("PythiaMomDauFilter",
     ParticleID = cms.untracked.int32(421),
     MomMinPt = cms.untracked.double(0.0),
-    MomMinEta = cms.untracked.double(-2.4),
-    MomMaxEta = cms.untracked.double(2.4),
+    MomMinEta = cms.untracked.double(-10.0),
+    MomMaxEta = cms.untracked.double(10.0),
     DaughterIDs = cms.untracked.vint32(211, -321),
     NumberDaughters = cms.untracked.int32(2),
     NumberDescendants = cms.untracked.int32(0),
@@ -52,10 +52,10 @@ D0Daufilter = cms.EDFilter("PythiaMomDauFilter",
 
 D0rapidityfilter = cms.EDFilter("PythiaFilter",
       ParticleID = cms.untracked.int32(421),
-      		MinPt = cms.untracked.double(0.0),
-      			MaxPt = cms.untracked.double(500.),
-      			MinRapidity = cms.untracked.double(-1.2),
-      			MaxRapidity = cms.untracked.double(1.2),
-)
+                                 MinPt = cms.untracked.double(1.2),
+                                                                 MaxPt = cms.untracked.double(1000.),
+                                                                 MinRapidity = cms.untracked.double(-2.5),
+                                                                 MaxRapidity = cms.untracked.double(2.5),
+                                                                 )
 
 ProductionFilterSequence = cms.Sequence(generator*partonfilter*D0Daufilter*D0rapidityfilter)
