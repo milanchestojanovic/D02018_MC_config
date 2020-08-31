@@ -47,7 +47,7 @@ D0Daufilter = cms.EDFilter("PythiaMomDauFilter",
     DaughterIDs = cms.untracked.vint32(211, -321),
     NumberDaughters = cms.untracked.int32(2),
     NumberDescendants = cms.untracked.int32(0),
-    #BetaBoost = cms.untracked.double(0.0),
+    BetaBoost = cms.untracked.double(0.0),
 )
 
 D0rapidityfilter = cms.EDFilter("PythiaFilter",
