@@ -52,10 +52,10 @@ D0Daufilter = cms.EDFilter("PythiaMomDauFilter",
 
 D0rapidityfilter = cms.EDFilter("PythiaFilter",
       ParticleID = cms.untracked.int32(421),
-                                 MinPt = cms.untracked.double(1.2),
+                                 MinPt = cms.untracked.double(0.0),
                                                                  MaxPt = cms.untracked.double(1000.),
-                                                                 MinRapidity = cms.untracked.double(-2.5),
-                                                                 MaxRapidity = cms.untracked.double(2.5),
+                                                                 MinRapidity = cms.untracked.double(-1.2),
+                                                                 MaxRapidity = cms.untracked.double(1.2),
                                                                  )
 
 ProductionFilterSequence = cms.Sequence(generator*partonfilter*D0Daufilter*D0rapidityfilter)
