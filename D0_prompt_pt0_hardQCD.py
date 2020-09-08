@@ -53,7 +53,7 @@ D0Daufilter = cms.EDFilter("PythiaMomDauFilter",
 D0rapidityfilter = cms.EDFilter("PythiaFilter",
       ParticleID = cms.untracked.int32(421),
                                  MinPt = cms.untracked.double(0.0),
-                                                                 MaxPt = cms.untracked.double(1000.),
+                                                                 MaxPt = cms.untracked.double(500.),
                                                                  MinRapidity = cms.untracked.double(-1.2),
                                                                  MaxRapidity = cms.untracked.double(1.2),
                                                                  )
